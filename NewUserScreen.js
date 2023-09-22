@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { FIREBASE_AUTH } from './src/services/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 function NewUserScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [VerPassword, setVerPassword] = useState('');
+    const auth = FIREBASE_AUTH;
 
-    const CheckNewUser = () => {
-
+    const signUp = async () => {
+      try{
+        const response = await createUserWithEmailAndPassword(auth, email, password);
+        console.log(response);
+        alert('Usuário Criado!');
+      } catch (error) {
+        console.log(error);
+        alert('Sign in failed: ' + error.message);
+      }
     }
 
     return (
@@ -28,7 +38,7 @@ function NewUserScreen({ navigation }) {
                 style={styles.input}
                 placeholder="E-mail"
                 placeholderTextColor={"#FFFFFF"}
-                onChangeText={(text) => setPassword(text)}
+                onChangeText={(text) => setEmail(text)}
                 value={email}
             />
             <TextInput
@@ -47,7 +57,7 @@ function NewUserScreen({ navigation }) {
                 onChangeText={(text) => setPassword(text)}
                 value={VerPassword}
             />
-              <TouchableOpacity style={styles.button} onPress={CheckNewUser}>
+              <TouchableOpacity style={styles.button} onPress={signUp}>
                   <Text style={styles.text}>Cadastre-se</Text>
               </TouchableOpacity>
             </View>

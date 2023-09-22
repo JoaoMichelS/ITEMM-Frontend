@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import {FIREBASE_AUTH, auth} from "./src/services/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function LoginScreen({ navigation }) {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const auth = FIREBASE_AUTH;
 
-    const ForgotPassword = () => {
-      
+    const signIn = async () => {
+      try{
+        const response = await signInWithEmailAndPassword(auth, email, password);
+        console.log(response);
+        alert('logou!');
+        navigation.navigate('Main');
+      } catch (error) {
+        console.log(error);
+        alert('Sign in failed: ' + error.message);
+      }
     }
 
-    const handleLogin = () => {
+    const ForgotPassword = () => {
 
     };
 
@@ -25,10 +36,10 @@ function LoginScreen({ navigation }) {
             />
             <TextInput
                 style={styles.input}
-                placeholder="Ussuário"
+                placeholder="Email"
                 placeholderTextColor={"#FFFFFF"}
-                onChangeText={(text) => setUsername(text)}
-                value={username}
+                onChangeText={(text) => setEmail(text)}
+                value={email}
             />
             <TextInput
                 style={styles.input}
@@ -42,7 +53,7 @@ function LoginScreen({ navigation }) {
                 <Text style={styles.ForgotPassword}>Recuperar senha</Text>
             </TouchableOpacity>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <TouchableOpacity style={styles.button} onPress={signIn}>
                   <Text style={styles.text}>ENTRAR</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.buttonNewUser} onPress={NewUser}>
