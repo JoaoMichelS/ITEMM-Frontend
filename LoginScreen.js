@@ -21,7 +21,7 @@ function LoginScreen({ navigation }) {
     }
 
     const ForgotPassword = () => {
-
+      navigation.navigate('ForgotPassword')
     };
 
     const NewUser = () => {
