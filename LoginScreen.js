@@ -8,7 +8,7 @@ function LoginScreen({ navigation }) {
     const [password, setPassword] = useState('');
     const auth = FIREBASE_AUTH;
 
-    const signIn = async () => {
+    const signIn = async () => { 
       try{
         const response = await signInWithEmailAndPassword(auth, email, password);
         console.log(response);
@@ -45,7 +45,7 @@ function LoginScreen({ navigation }) {
                 style={styles.input}
                 placeholder="Senha"
                 placeholderTextColor={"#FFFFFF"}
-                secureTextEntry
+                secureTextEntry 
                 onChangeText={(text) => setPassword(text)}
                 value={password}
             />

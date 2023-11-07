@@ -5,9 +5,9 @@ import LoginScreen from './LoginScreen';
 import NewUserScreen from './NewUserScreen';
 import MainScreen from './MainScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
+import NovoChamado from './NovoChamado';
 
-
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(); 
 
 function App(){
   return (
@@ -17,6 +17,7 @@ function App(){
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="Main" component={MainScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="NovoChamado" component={NovoChamado} />
       </Stack.Navigator>
     </NavigationContainer>
   )

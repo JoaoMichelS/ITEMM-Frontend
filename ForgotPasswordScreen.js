@@ -6,8 +6,7 @@ import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/aut
 function ForgotPasswordScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const auth = FIREBASE_AUTH;
-
-
+ 
     const ForgotPassword = () => {
         sendPasswordResetEmail(auth, email)
         .then(() => {
