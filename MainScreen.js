@@ -42,12 +42,11 @@ const styles = StyleSheet.create ({
         paddingRight: 'auto',
         paddingLeft: 'auto', 
         marginBottom: 50,
-        margin: 85,
+        margin: "20%",
         height: 85,
         width: 250,
         alignItems: 'center',
         justifyContent: 'center',
-    
         
     },
 
