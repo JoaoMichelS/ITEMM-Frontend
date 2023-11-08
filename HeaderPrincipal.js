@@ -11,7 +11,7 @@ export default function Header () {
             <TouchableOpacity>
                 <Entypo style={styles.menu}name="menu" size={30}/>
             </TouchableOpacity> 
-            <Text style={styles.nome}>Olá, Gabriel</Text>
+            <Text style={styles.nome}>Olá, </Text>
             <Text style={styles.data}>7 set. 2023</Text> 
             <TouchableOpacity>
                 <Fontisto style={styles.bell} name="bell-alt" size={20}/>
@@ -20,44 +20,51 @@ export default function Header () {
     );
 };
 
-const styles = StyleSheet.create ({
 
+const styles = StyleSheet.create ({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
     header : {
         height : 125,
         paddingTop: 10,
         paddingRight: 25,
-        paddingLeft: 25,
         paddingBottom: 8,
+        paddingLeft: 25,
         backgroundColor: '#96C75A',
         borderBottomColor: '#fff',
-        borderBottomWidth: 2,
-        borderRadius: 6.5,
+        borderBottomWidth: 0,
         justifyContent: 'center',
         },
     
         
     nome : {
+        color: "#FFF",
         fontSize: 24,
         marginRight: 10,
         alignSelf: "flex-start",
         top: 10,
-        
+        left: 30,
         
     },
 
     data : {
+        color: "#FFF",
         fontSize: 18,
         alignSelf: "flex-start",
         marginRight: 10,
         top: 10,
+        left: 30,
         },
     
     menu : {
         size : "auto", 
         color : "#FFFFFF",
         position : "relative",
-        right : 18,
-        top: 5,
+        left: -5,
+        top: 3,
     },
 
     bell : {
@@ -66,5 +73,5 @@ const styles = StyleSheet.create ({
         textAlign : "right",
         position : "relative",
         bottom : 76,
-    }
+    },
 });

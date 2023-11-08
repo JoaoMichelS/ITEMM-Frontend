@@ -15,7 +15,7 @@ function MainScreen({ navigation }) {
                 <Text></Text>
             </View>
             <TouchableOpacity style={styles.ButtonChamado} onPress={NovoChamado}>
-                <Text style={styles.IniciarChamado}>Iniciar Chamado</Text>
+                <Text style={styles.ChamadosAbertos}>Chamados abertos</Text>
             </TouchableOpacity>
         </View>
     );
@@ -27,6 +27,7 @@ const styles = StyleSheet.create ({
     Container: {
         flex: 1,
         justifyContent: 'center',
+        
     },
 
     Content: {
@@ -49,10 +50,12 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
+        bottom: "20%",
+        
         
     },
 
-    IniciarChamado: {
+    ChamadosAbertos: {
         color: '#FFFFFF',
         fontSize: 20,
     },
