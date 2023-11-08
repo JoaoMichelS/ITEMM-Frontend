@@ -24,6 +24,7 @@ function MainScreen({ navigation }) {
 const styles = StyleSheet.create ({
     Container: {
         flex: 1,
+        justifyContent: 'center',
     },
 
     Content: {
@@ -37,16 +38,17 @@ const styles = StyleSheet.create ({
         borderWidth: 2, 
         borderColor: '#2B2D60', 
         borderRadius: 12, 
-        padding: 30,
-        paddingRight: 50,
-        paddingLeft: 50, 
+        padding: 10,
+        paddingRight: 'auto',
+        paddingLeft: 'auto', 
         marginBottom: 50,
-        margin: 55,
+        margin: 85,
         height: 85,
         width: 250,
-        justifyContent: 'center',
-        alignContent: 'center',
         alignItems: 'center',
+        justifyContent: 'center',
+    
+        
     },
 
     IniciarChamado: {
