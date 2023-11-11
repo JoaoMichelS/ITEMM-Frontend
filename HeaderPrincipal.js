@@ -9,7 +9,7 @@ export default function Header () {
     return (
         <View style={styles.header}>
             <TouchableOpacity>
-                <Entypo style={styles.menu}name="menu" size={30}/>
+                <Entypo style={styles.menu} name="menu" size={30}/>
             </TouchableOpacity> 
             <Text style={styles.nome}>Olá, </Text>
             <Text style={styles.data}>7 set. 2023</Text> 
