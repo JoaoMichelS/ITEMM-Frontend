@@ -4,8 +4,12 @@ import Header from './HeaderPrincipal';
 
 function MainScreen({ navigation }) {
 
-    const NovoChamado = () => { 
-        navigation.navigate ('NovoChamado')
+    const ChamadosAbertos = () => { 
+        navigation.navigate ('ChamadoAberto')
+    };
+
+    const Relatorios = () => { 
+        navigation.navigate ('Relatorio')
     };
 
     return (
@@ -14,14 +18,16 @@ function MainScreen({ navigation }) {
             <View style={styles.Content}>
                 <Text></Text>
             </View>
-            <TouchableOpacity style={styles.ButtonChamado} onPress={NovoChamado}>
+            <TouchableOpacity style={styles.ButtonChamado} onPress={ChamadosAbertos}>
                 <Text style={styles.ChamadosAbertos}>Chamados abertos</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.ButtonRelatorio} onPress={Relatorios}>
+                <Text style={styles.Relatorios}>Relatórios</Text>
             </TouchableOpacity>
         </View>
     );
     
 };
-
 
 const styles = StyleSheet.create ({
     Container: {
@@ -46,19 +52,42 @@ const styles = StyleSheet.create ({
         paddingLeft: 'auto', 
         marginBottom: 50,
         height: 85,
-        width: 250,
+        width: 300,
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "20%",
-        
-        
+        bottom: "15%",
     },
 
+    ButtonRelatorio: {
+        backgroundColor: '#2B2D60',
+        borderWidth: 2, 
+        borderColor: '#2B2D60', 
+        borderRadius: 12,
+        paddingRight: 'auto',
+        paddingLeft: 'auto', 
+        marginBottom: -20,
+        height: 85,
+        width: 220,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        bottom: "10%",
+    },
+
+
     ChamadosAbertos: {
-        color: '#FFFFFF',
+        color: "#FFF",
+        fontSize: 25,
+    },
+
+    Relatorios: {
+        color: "#FFF",
         fontSize: 20,
     },
+
+    TextoChamado: {
+    }
 });
 
 export default MainScreen;
