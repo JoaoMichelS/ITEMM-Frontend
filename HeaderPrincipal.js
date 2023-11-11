@@ -35,7 +35,6 @@ const styles = StyleSheet.create ({
         paddingLeft: 25,
         backgroundColor: '#96C75A',
         borderBottomColor: '#fff',
-        borderBottomWidth: 0,
         justifyContent: 'center',
         },
     
@@ -43,8 +42,6 @@ const styles = StyleSheet.create ({
     nome : {
         color: "#FFF",
         fontSize: 24,
-        marginRight: 10,
-        alignSelf: "flex-start",
         top: 10,
         left: 30,
         
@@ -53,25 +50,21 @@ const styles = StyleSheet.create ({
     data : {
         color: "#FFF",
         fontSize: 18,
-        alignSelf: "flex-start",
-        marginRight: 10,
         top: 10,
         left: 30,
         },
     
     menu : {
-        size : "auto", 
         color : "#FFFFFF",
-        position : "relative",
         left: -5,
         top: 3,
     },
 
     bell : {
-        color:'#FFFFFF',
-        alignItems : "center",
+        color: '#FFFFFF',
         textAlign : "right",
-        position : "relative",
         bottom : 76,
+        padding: -50,
+        spacing: 0,
     },
 });
