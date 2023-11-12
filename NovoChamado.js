@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function NovoChamado ({ navigation }) {
 
@@ -8,23 +9,34 @@ function NovoChamado ({ navigation }) {
         <View style={styles.Container}>
             <Header2 />
             <View>
+                <ScrollView>
                 <Text style={styles.Title}>Novo Chamado</Text>
-                <Text style={styles.Title2}>Assunto</Text>
-                <TextInput style={styles.input}>
+                <Text style={styles.Title2}>Departamento</Text>
+                <TextInput style={styles.input1}>
+                    {/* onChangeText={(text) => setEmail(text)}*/}
+                    {/* value={Text}*/}
+                </TextInput>
+                <Text style={styles.Title3}>Assunto</Text>
+                <TextInput style={styles.input2}>
                     {/* onChangeText={(text) => setEmail(text)}*/}
                     {/* value={Text}*/}
                 </TextInput>
                 <Text style={styles.Title2}>Descrição</Text>
-                <TextInput style={styles.input2} 
+                
+                <TextInput style={styles.input3} 
                     value={Text}
                     textAlignVertical='top' 
                     returnKeyType='done' 
                     multiline={true}
                 />
-            </View>
-            <TouchableOpacity style={styles.ButtonCriar} onPress={NovoChamado}>
+                
+                <TouchableOpacity style={styles.ButtonCriar} onPress={NovoChamado}>
                 <Text style={styles.CriarChamado}>Criar Chamado</Text>
             </TouchableOpacity>
+            </ScrollView>
+            </View>
+            
+            
         </View>
     );
 };
@@ -43,13 +55,23 @@ const styles = StyleSheet.create ({
     },
 
     Title2: {
+
         color: "#2B2D60",
         paddingTop: 45,
+        paddingLeft: 25,
+        fontSize: 20,
+
+    },
+
+    Title3: {
+        color: "#2B2D60",
+        paddingTop: 20,
         paddingLeft: 25,
         fontSize: 20,
     },
 
     ButtonCriar: {
+        flex: 1,
         backgroundColor: '#2B2D60',
         borderWidth: 2, 
         borderColor: '#2B2D60', 
@@ -71,7 +93,7 @@ const styles = StyleSheet.create ({
         fontSize: 20,
     },
 
-    input: {
+    input1: {
         width: 300,
         height: 40,
         borderColor: '#2B2D60',
@@ -84,7 +106,18 @@ const styles = StyleSheet.create ({
 
     input2: {
         width: 300,
-        height: 150,
+        height: 40,
+        borderColor: '#2B2D60',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingLeft: 10,
+        marginBottom:5,
+        marginLeft: 25,
+    },
+
+    input3: {
+        width: 300,
+        height: 100,
         borderColor: '#2B2D60',
         borderWidth: 1,
         borderRadius: 5,
