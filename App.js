@@ -12,6 +12,7 @@ import DepartamentoOP from './DepartamentoOP';
 import Perfil from './Perfil';
 import Configuracoes from './Configuracoes';
 import ResponderChamado from './ResponderChamado';
+import DepartamentoPedagogico from './DepartamentoPedagogico'
 
 const Stack = createStackNavigator(); 
 
@@ -30,7 +31,8 @@ function App(){
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Configuracoes" component={Configuracoes} />
         <Stack.Screen name="ResponderChamado" component={ResponderChamado} />
-      </Stack.Navigator>
+        <Stack.Screen name="Pedagógico" component={DepartamentoPedagogico} /> 
+      </Stack.Navigator> 
     </NavigationContainer>
   )
 }

@@ -4,6 +4,11 @@ import Header2 from './Header2';
 
 function ResponderChamado ({ navigation }) {
 
+    const EnviarResposta = () => {
+        navigation.navigate('EnviarResposta')
+    };
+
+
     return (
         <View style={styles.Container}>
             <Header2 />
@@ -12,7 +17,7 @@ function ResponderChamado ({ navigation }) {
                 <Text style={styles.Title2}>Departamento</Text>
                 <TextInput style={styles.input}>
                 </TextInput>
-                <Text style={styles.Title2}>Comentário</Text>
+                <Text style={styles.Title3}>Comentário</Text>
                 <TextInput style={styles.input2} 
                     value={Text}
                     textAlignVertical='top' 
@@ -20,7 +25,7 @@ function ResponderChamado ({ navigation }) {
                     multiline={true}
                 />
             </View>
-            <TouchableOpacity style={styles.ButtonCriar} onPress={EnviarResposta}>
+            <TouchableOpacity style={styles.ButtonResposta} onPress={EnviarResposta}>
                 <Text style={styles.EnviarResposta}>Enviar Resposta</Text>
             </TouchableOpacity>
         </View>
@@ -33,35 +38,44 @@ const styles = StyleSheet.create ({
     },
 
     Title: {
-        color: "#2B2D60",
-        textDecorationLine: 'underline',
+        color: '#2B2D60',
         textAlign: 'center',
-        paddingTop: 25,
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',
         fontSize: 25,
+        paddingBottom: '10%',
+        paddingTop: '10%',
+        alignContent: 'center',
+        alignSelf: 'center',
+
     },
 
     Title2: {
         color: "#2B2D60",
-        paddingTop: 45,
-        paddingLeft: 25,
+        paddingTop: '8%',
+        paddingLeft: '11%',
         fontSize: 20,
     },
 
-    ButtonCriar: {
+    Title3: {
+        color: "#2B2D60",
+        paddingTop: '14%',
+        paddingLeft: '11%',
+        fontSize: 20,
+
+    },
+
+        ButtonResposta: {
         backgroundColor: '#2B2D60',
         borderWidth: 2, 
         borderColor: '#2B2D60', 
         borderRadius: 12, 
-        padding: 30,
-        paddingRight: 50,
-        paddingLeft: 50, 
-        marginBottom: 50,
-        margin: 55,
         height: 85,
-        width: 250,
-        justifyContent: 'center',
-        alignContent: 'center',
+        width: 300,
         alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        bottom: "-10%",
     },
 
     input: {
@@ -70,9 +84,7 @@ const styles = StyleSheet.create ({
         borderColor: '#2B2D60',
         borderWidth: 1,
         borderRadius: 5,
-        paddingLeft: 10,
-        marginBottom: 5,
-        marginLeft: 25,
+        alignSelf: 'center',
     },
 
     input2: {
@@ -81,16 +93,17 @@ const styles = StyleSheet.create ({
         borderColor: '#2B2D60',
         borderWidth: 1,
         borderRadius: 5,
-        paddingLeft: 10,
-        marginBottom:5,
-        marginLeft: 25,
+        alignSelf: 'center',
     },
 
-    Title: {
-        color: "#2B2D60",
-        textDecorationLine: 'underline',
-    }
-
+    EnviarResposta: {
+        color: "#FFF",
+        fontSize: 20,
+        alignContent: 'center',
+        alignSelf: 'center',
+        textAlign: 'center',
+        
+    },
 });
 
 export default ResponderChamado;
