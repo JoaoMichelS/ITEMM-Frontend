@@ -1,33 +1,54 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Header from './HeaderPrincipal';
+import Header2 from './Header2';
 
-function MainOperador({ navigation }) {
+function Departamentos({ navigation }) {
 
-    const ChamadosAbertos = () => { 
-        navigation.navigate ('ChamadoAberto')
+    const DepPedagogico = () => {
+        navigation.navigate (' Pedagogico ')
     };
 
-    const Relatorios = () => { 
-        navigation.navigate ('Relatorio')
+    const DepSelecao = () => {
+        navigation.navigate (' Selecao ')
+    };
+
+    const DepSocial = () => {
+        navigation.navigate (' Social ')
+    };
+
+    const DepPessoal = () => {
+        navigation.navigate (' Pessoal ')
+    };
+
+    const DepComercial = () => {
+        navigation.navigate (' Comercial ')
     };
 
     return (
         <View style={styles.Container}>
-            <Header />
-            <View style={styles.Content}>
-                <Text></Text>
-            </View>
-            <TouchableOpacity style={styles.ButtonChamado} onPress={ChamadosAbertos}>
-                <Text style={styles.ChamadosAbertos}>Chamados abertos</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.ButtonRelatorio} onPress={Relatorios}>
-                <Text style={styles.Relatorios}>Relatórios</Text>
-            </TouchableOpacity>
+        <Header2 />
+        <View style={styles.Content}>
+            <Text></Text>
         </View>
+        <TouchableOpacity style={styles.ButtonPedago} onPress={DepPedagogico}>
+            <Text style={styles.DepPedagogico}>Pedagógico</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ButtonSelecao} onPress={DepSelecao}>
+            <Text style={styles.DepSelecao}>Seleção</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ButtonSocial} onPress={DepSocial}>
+            <Text style={styles.DepSocial}>Social</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ButtonPessoal} onPress={DepPessoal}>
+            <Text style={styles.DepPessoal}>Pessoal</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ButtonComercial} onPress={DepComercial}>
+            <Text style={styles.DepComercial}>Comercial</Text>
+        </TouchableOpacity>
+    </View>
     );
     
-};
+}
 
 const styles = StyleSheet.create ({
     Container: {
@@ -90,4 +111,4 @@ const styles = StyleSheet.create ({
     }
 });
 
-export default MainOperador;
+export default Departamentos;
