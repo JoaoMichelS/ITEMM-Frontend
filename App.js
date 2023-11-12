@@ -13,13 +13,14 @@ import Configuracoes from './Configuracoes';
 import ResponderChamado from './ResponderChamado';
 import Notificacoes from './Notificacoes';
 import Header from './HeaderPrincipal';
+import MenuScreen from './MenuScreen';
 
 const Stack = createStackNavigator(); 
 
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MainOperador">
+      <Stack.Navigator initialRouteName="Menu">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -32,6 +33,7 @@ function App(){
         <Stack.Screen name="ResponderChamado" component={ResponderChamado} />
         <Stack.Screen name="Notificacoes" component={Notificacoes} />
         <Stack.Screen name="HeaderPrincipal" component={Header} />
+        <Stack.Screen name="Menu" component={MenuScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
