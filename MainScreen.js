@@ -6,7 +6,7 @@ function MainScreen({ navigation }) {
 
     const NovoChamado = () => { 
         navigation.navigate ('NovoChamado')
-    };
+    }; 
 
     return (
         <View style={styles.Container}>

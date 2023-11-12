@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
-function Chamados ({ navigation }) {
+function MeusChamados ({ navigation }) { 
+
+    const Chamado = () => {
+        navigation.navigate('Chamado')
+      };
 
     return (
         <View style={styles.Container}>
@@ -13,7 +17,7 @@ function Chamados ({ navigation }) {
             </View>    
             <View>
                 <ScrollView>
-                    <TouchableOpacity style={styles.ContainerChamado}>
+                    <TouchableOpacity style={styles.ContainerChamado} onPress={Chamado}>
                         <Text style={styles.Departamento}>Departamento Pessoal</Text>
                         <Text style={styles.Assunto}>Duvidas com o cadatro</Text>
                     </TouchableOpacity>
@@ -63,4 +67,4 @@ const styles = StyleSheet.create ({
 
 });
 
-export default Chamados;
+export default MeusChamados;
