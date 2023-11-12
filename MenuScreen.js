@@ -36,7 +36,6 @@ function MenuScreen ({ navigation }) {
                     <SimpleLineIcons name="logout" size={28}/>
                     <Text style={styles.Sair}>Sair</Text>
                 </TouchableOpacity>
-                <Text style={styles.Sair}>Sair</Text>
             </View>
         </View>
     );
