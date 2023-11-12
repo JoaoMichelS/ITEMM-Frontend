@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } fr
 import Header2 from './Header2';
  
 function Perfil ({ navigation }) {
-
+    
     return ( 
         <View style={styles.Container}>
             <Header2 />
@@ -12,6 +12,7 @@ function Perfil ({ navigation }) {
                 <TextInput style={styles.inputNome} />
                 <TextInput style={styles.inputEmail} />
                 <TextInput style={styles.inputSenha} />
+        
             </View>
             <View style={styles.ButtonContainer}>
                 <TouchableOpacity style={styles.ButtonEditar} >
@@ -46,7 +47,7 @@ const styles = StyleSheet.create ({
         borderWidth: 1,
         borderRadius: 8,
         paddingLeft: 10,
-        paddingTop: '10%',
+        marginTop: '15%',
         alignSelf: 'center',
         alignContent: 'center',
         textAlign: 'center',
@@ -64,6 +65,7 @@ const styles = StyleSheet.create ({
         alignContent: 'center',
         textAlign: 'center',
         justifyContent: 'center',
+        marginTop: '15%',
     },
 
     inputSenha: {
@@ -71,10 +73,10 @@ const styles = StyleSheet.create ({
         height: 40,
         borderColor: '#2B2D60',
         borderWidth: 1,
-        borderRadius: 9,
+        borderRadius: 8,
         paddingLeft: 10,
         alignSelf: 'center',
-        padding
+        marginTop: '15%',
     },
 
     ButtonContainer: {
