@@ -29,7 +29,7 @@ const styles = StyleSheet.create ({
     Container: {
         flex: 1,
     },
-
+ 
     Title: {
         color: "#2B2D60",
         textDecorationLine: 'underline',

@@ -4,7 +4,7 @@ import Header2 from './Header2';
 
 function Departamentos({ navigation }) {
 
-    const DepPedagogico = () => {
+    const DepPedagogico = () => { 
         navigation.navigate (' Pedagogico ')
     };
 

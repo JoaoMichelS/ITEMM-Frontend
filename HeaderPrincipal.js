@@ -4,16 +4,20 @@ import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import {FIREBASE_AUTH, auth} from "./src/services/firebaseConfig";
 
+export default function Header ({ navigation }) {
 
-export default function Header () {
+    const Notificacoes = () => {
+        navigation.navigate('Notificacoes')
+      };
+
     return (
         <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity> 
                 <Entypo style={styles.menu} name="menu" size={30}/>
             </TouchableOpacity> 
             <Text style={styles.nome}>Olá, </Text>
             <Text style={styles.data}>7 set. 2023</Text> 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={Notificacoes}>
                 <Fontisto style={styles.bell} name="bell-alt" size={20}/>
             </TouchableOpacity>
         </View>

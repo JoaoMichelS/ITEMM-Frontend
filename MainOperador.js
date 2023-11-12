@@ -4,8 +4,8 @@ import Header from './HeaderPrincipal';
 
 function MainOperador({ navigation }) {
 
-    const ChamadosAbertos = () => { 
-        navigation.navigate ('ChamadoAberto')
+    const Departamentos = () => { 
+        navigation.navigate ('Departamentos') 
     };
 
     const Relatorios = () => { 
@@ -18,7 +18,7 @@ function MainOperador({ navigation }) {
             <View style={styles.Content}>
                 <Text></Text>
             </View>
-            <TouchableOpacity style={styles.ButtonChamado} onPress={ChamadosAbertos}>
+            <TouchableOpacity style={styles.ButtonChamado} onPress={Departamentos}>
                 <Text style={styles.ChamadosAbertos}>Chamados abertos</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.ButtonRelatorio} onPress={Relatorios}>

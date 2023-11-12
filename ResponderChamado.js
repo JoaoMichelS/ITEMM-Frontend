@@ -20,7 +20,7 @@ function ResponderChamado ({ navigation }) {
                     multiline={true}
                 />
             </View>
-            <TouchableOpacity style={styles.ButtonCriar} onPress={EnviarResposta}>
+            <TouchableOpacity style={styles.ButtonCriar} >
                 <Text style={styles.EnviarResposta}>Enviar Resposta</Text>
             </TouchableOpacity>
         </View>
