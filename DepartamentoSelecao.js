@@ -3,13 +3,13 @@ import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } fr
 import Header2 from './Header2';
 
 
-function DepartamentoPedagogico ({ navigation }) {
+function DepartamentoSelecao ({ navigation }) {
 
 
     return (
         <View style={styles.Container}>
             <Header2 />
-                <Text style={styles.Title}>Departamento Pedagógico</Text>
+                <Text style={styles.Title}>Departamento Seleção</Text>
         </View>
     );
 };
@@ -32,4 +32,4 @@ const styles = StyleSheet.create ({
 });
 
 
-export default DepartamentoPedagogico
+export default DepartamentoSelecao
