@@ -28,7 +28,7 @@ function Departamentos({ navigation }) {
         <View style={styles.Container}>
         <Header2 />
         <View style={styles.Content}>
-            <Text></Text>
+            <Text style={styles.Text}>Departamentos</Text>
         </View>
         <TouchableOpacity style={styles.ButtonPedago} onPress={DepPedagogico}>
             <Text style={styles.DepPedagogico}>Pedagógico</Text>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
     },
 
-    ButtonChamado: {
+    ButtonPedago: {
         backgroundColor: '#2B2D60',
         borderWidth: 2, 
         borderColor: '#2B2D60', 
@@ -71,44 +71,114 @@ const styles = StyleSheet.create ({
         padding: 10,
         paddingRight: 'auto',
         paddingLeft: 'auto', 
-        marginBottom: 50,
+        marginBottom: 20,
         height: 85,
         width: 300,
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "15%",
+        bottom: "5%",
     },
 
-    ButtonRelatorio: {
+    ButtonSelecao: {
         backgroundColor: '#2B2D60',
         borderWidth: 2, 
         borderColor: '#2B2D60', 
-        borderRadius: 12,
+        borderRadius: 12, 
+        padding: 10,
         paddingRight: 'auto',
         paddingLeft: 'auto', 
-        marginBottom: -20,
+        marginBottom: 20,
         height: 85,
-        width: 220,
+        width: 300,
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "10%",
+        bottom: "5%",
     },
 
+    ButtonSocial: {
+        backgroundColor: '#2B2D60',
+        borderWidth: 2, 
+        borderColor: '#2B2D60', 
+        borderRadius: 12, 
+        padding: 10,
+        paddingRight: 'auto',
+        paddingLeft: 'auto', 
+        marginBottom: 20,
+        height: 85,
+        width: 300,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        bottom: "5%",
+    },
 
-    ChamadosAbertos: {
+    ButtonPessoal: {
+        backgroundColor: '#2B2D60',
+        borderWidth: 2, 
+        borderColor: '#2B2D60', 
+        borderRadius: 12, 
+        padding: 10,
+        paddingRight: 'auto',
+        paddingLeft: 'auto', 
+        marginBottom: 20,
+        height: 85,
+        width: 300,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        bottom: "5%",
+    },
+
+    ButtonComercial: {
+        backgroundColor: '#2B2D60',
+        borderWidth: 2, 
+        borderColor: '#2B2D60', 
+        borderRadius: 12, 
+        padding: 10,
+        paddingRight: 'auto',
+        paddingLeft: 'auto', 
+        marginBottom: -15,
+        height: 85,
+        width: 300,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        bottom: "5%",
+    },
+
+    DepPedagogico: {
         color: "#FFF",
-        fontSize: 25,
+        fontSize: 30,
     },
 
-    Relatorios: {
+    DepSelecao: {
         color: "#FFF",
-        fontSize: 20,
+        fontSize: 30,
+    },
+    DepSocial: {
+        color: "#FFF",
+        fontSize: 30,
+    },
+    DepPessoal: {
+        color: "#FFF",
+        fontSize: 30,
+    },
+    DepComercial: {
+        color: "#FFF",
+        fontSize: 30,
     },
 
-    TextoChamado: {
+    Text: {
+        color: '#2B2D60',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',
+        fontSize: 40,
+        paddingBottom: '13%',
     }
+    
 });
 
 export default Departamentos;

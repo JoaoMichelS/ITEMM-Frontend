@@ -11,13 +11,14 @@ import MainOperador from './MainOperador';
 import DepartamentoOP from './DepartamentoOP';
 import Perfil from './Perfil';
 import Configuracoes from './Configuracoes';
+import ResponderChamado from './ResponderChamado';
 
 const Stack = createStackNavigator(); 
 
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Departamentos">
+      <Stack.Navigator initialRouteName="ResponderChamado">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -28,6 +29,7 @@ function App(){
         <Stack.Screen name="Departamentos" component={DepartamentoOP} />
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Configuracoes" component={Configuracoes} />
+        <Stack.Screen name="ResponderChamado" component={ResponderChamado} />
       </Stack.Navigator>
     </NavigationContainer>
   )
