@@ -6,13 +6,17 @@ import {FIREBASE_AUTH, auth} from "./src/services/firebaseConfig";
 
 export default function Header ({ navigation }) {
 
+    const MenuScreen = () => {
+        navigation.navigate('MenuScreen')
+      };
+
     const Notificacoes = () => {
         navigation.navigate('Notificacoes')
       };
 
     return (
         <View style={styles.header}>
-            <TouchableOpacity> 
+            <TouchableOpacity  onPress={MenuScreen}> 
                 <Entypo style={styles.menu} name="menu" size={30}/>
             </TouchableOpacity> 
             <Text style={styles.nome}>Olá, </Text>
@@ -24,13 +28,13 @@ export default function Header ({ navigation }) {
     );
 };
 
-
 const styles = StyleSheet.create ({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-      },
+    },
+
     header : {
         height : 125,
         paddingTop: 10,
@@ -40,9 +44,8 @@ const styles = StyleSheet.create ({
         backgroundColor: '#96C75A',
         borderBottomColor: '#fff',
         justifyContent: 'center',
-        },
+    },
     
-        
     nome : {
         color: "#FFF",
         fontSize: 24,

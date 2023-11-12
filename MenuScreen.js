@@ -14,9 +14,9 @@ function MenuScreen ({ navigation }) {
         navigation.navigate('Perfil')
       };
 
-    //   const Notificacoes = () => {
-    //     navigation.navigate('Notificacoes')
-    //   };
+      const MeusChamados = () => {
+        navigation.navigate('MeusChamados')
+      };
 
       const Configuracoes = () => {
         navigation.navigate('Configuracoes')
@@ -32,7 +32,7 @@ function MenuScreen ({ navigation }) {
                 </TouchableOpacity>
             </View>
             <View style={styles.ContainerChamados}>
-                <TouchableOpacity style={styles.IconeChamados} >
+                <TouchableOpacity style={styles.IconeChamados} onPress={MeusChamados}>
                     <Entypo name="folder" size={30}/>
                     <Text style={styles.Chamados}>Meus Chamados</Text>
                 </TouchableOpacity>

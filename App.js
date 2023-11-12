@@ -13,7 +13,6 @@ import Configuracoes from './Configuracoes';
 import ResponderChamado from './ResponderChamado';
 import DepartamentoPedagogico from './DepartamentoPedagogico';
 import Notificacoes from './Notificacoes';
-import Header from './HeaderPrincipal';
 import MenuScreen from './MenuScreen';
 import Chamados from './MeusChamados';
 import DepartamentoComercial from './DepartamentoComercial';
@@ -44,9 +43,9 @@ function App(){
         <Stack.Screen name="Social" component={DepartamentoSocial} />
         <Stack.Screen name="Seleção" component={DepartamentoSelecao} /> 
         <Stack.Screen name="Notificacoes" component={Notificacoes} />
-        <Stack.Screen name="HeaderPrincipal" component={Header} />
         <Stack.Screen name="Menu" component={MenuScreen} />
-        <Stack.Screen name="Chamados" component={Chamados} />
+        <Stack.Screen name="MeusChamados" component={MeusChamados} />
+        <Stack.Screen name="Header" component={Header} />
       </Stack.Navigator>
     </NavigationContainer>
   )
