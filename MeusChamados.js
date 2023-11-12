@@ -5,17 +5,6 @@ import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 function Chamados ({ navigation }) {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         chamado: [
-    //             {departamento: 'Departamento Pessoal'},
-    //             {departamento: 'Social'},
-    //             {departamento: 'Pedagogico'},
-    //         ]
-    //     }
-    // }
-
     return (
         <View style={styles.Container}>
             <Header2 />
@@ -24,9 +13,10 @@ function Chamados ({ navigation }) {
             </View>    
             <View>
                 <ScrollView>
-                    <FlatList>
-
-                    </FlatList>
+                    <TouchableOpacity style={styles.ContainerChamado}>
+                        <Text style={styles.Departamento}>Departamento Pessoal</Text>
+                        <Text style={styles.Assunto}>Duvidas com o cadatro</Text>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         </View>
@@ -44,6 +34,31 @@ const styles = StyleSheet.create ({
         textAlign: 'center',
         paddingTop: 30,
         fontSize: 25,
+    },
+
+    ContainerChamado: {
+        marginTop: 40,
+        backgroundColor: '#FDF6BA',
+        paddingTop: 15,
+        paddingBottom: 20,
+        borderColor: '#FDF6BA', 
+        borderRadius: 12,
+        width: 380,
+        alignSelf: 'center',
+    },
+
+    Departamento: {
+        color: "#000000",
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginLeft: 10,
+    },
+
+    Assunto: {
+        color: "#000000",
+        fontSize: 17,
+        marginTop: 10,
+        marginLeft: 10,
     },
 
 });

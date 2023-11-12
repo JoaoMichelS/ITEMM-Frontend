@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Perfil from './Perfil';
-import Chamados from './Chamados';
+import Chamados from './MeusChamados';
 import Configuracoes from './Configuracoes';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -10,23 +10,35 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 
 function MenuScreen ({ navigation }) {
 
+    const Perfil = () => {
+        navigation.navigate('Perfil')
+      };
+
+    //   const Notificacoes = () => {
+    //     navigation.navigate('Notificacoes')
+    //   };
+
+      const Configuracoes = () => {
+        navigation.navigate('Configuracoes')
+      };
+      
     return (
         <View>
             <Text style={styles.Title}>Menu</Text>
             <View style={styles.ContainerPerfil}>
-                <TouchableOpacity style={styles.IconePerfil}>
+                <TouchableOpacity style={styles.IconePerfil} onPress={Perfil}>
                     <FontAwesome5 name="user-circle" size={30}/>
                     <Text style={styles.Perfil}>Perfil</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.ContainerChamados}>
-                <TouchableOpacity style={styles.IconeChamados}>
+                <TouchableOpacity style={styles.IconeChamados} >
                     <Entypo name="folder" size={30}/>
                     <Text style={styles.Chamados}>Meus Chamados</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.ContainerConfiguracoes}>
-                <TouchableOpacity style={styles.IconeConfiguracoes}>
+                <TouchableOpacity style={styles.IconeConfiguracoes} onPress={Configuracoes}>
                     <MaterialIcons name="settings" size={33}/>
                     <Text style={styles.Configuracoes}>Configurações</Text>
                 </TouchableOpacity>
