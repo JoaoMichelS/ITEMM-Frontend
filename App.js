@@ -14,7 +14,7 @@ import ResponderChamado from './ResponderChamado';
 import DepartamentoPedagogico from './DepartamentoPedagogico';
 import Notificacoes from './Notificacoes';
 import MenuScreen from './MenuScreen';
-import Chamados from './MeusChamados';
+import MeusChamados from './MeusChamados';
 import DepartamentoComercial from './DepartamentoComercial';
 import DepartamentoPessoal from './DepartamentoPessoal';
 import DepartamentoSocial from './DepartamentoSocial';
@@ -26,7 +26,7 @@ const Stack = createStackNavigator();
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Pessoal">
+      <Stack.Navigator initialRouteName="Perfil">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -45,7 +45,6 @@ function App(){
         <Stack.Screen name="Notificacoes" component={Notificacoes} />
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="MeusChamados" component={MeusChamados} />
-        <Stack.Screen name="Header" component={Header} />
       </Stack.Navigator>
     </NavigationContainer>
   )

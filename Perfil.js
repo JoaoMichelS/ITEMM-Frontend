@@ -35,7 +35,7 @@ const styles = StyleSheet.create ({
         textDecorationLine: 'underline',
         textAlign: 'center',
         paddingTop: 30,
-        fontSize: 25,
+        fontSize: 30,
         alignSelf: 'center',
     },
 
@@ -46,10 +46,11 @@ const styles = StyleSheet.create ({
         borderWidth: 1,
         borderRadius: 8,
         paddingLeft: 10,
-        marginTop: 80,
-        marginBottom: 5,
-        marginLeft: 25,
+        paddingTop: '10%',
         alignSelf: 'center',
+        alignContent: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
     },
 
     inputEmail: {
@@ -59,10 +60,10 @@ const styles = StyleSheet.create ({
         borderWidth: 1,
         borderRadius: 8,
         paddingLeft: 10,
-        marginTop: 80,
-        marginBottom: 5,
-        marginLeft: 25,
         alignSelf: 'center',
+        alignContent: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
     },
 
     inputSenha: {
@@ -72,10 +73,8 @@ const styles = StyleSheet.create ({
         borderWidth: 1,
         borderRadius: 9,
         paddingLeft: 10,
-        marginTop: 80,
-        marginBottom: 5,
-        marginLeft: 25,
         alignSelf: 'center',
+        padding
     },
 
     ButtonContainer: {
