@@ -26,7 +26,7 @@ const Stack = createStackNavigator();
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Perfil">
+      <Stack.Navigator initialRouteName="Departamentos">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -37,11 +37,11 @@ function App(){
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Configuracoes" component={Configuracoes} />
         <Stack.Screen name="ResponderChamado" component={ResponderChamado} />
-        <Stack.Screen name="Pedagógico" component={DepartamentoPedagogico} /> 
+        <Stack.Screen name="Pedagogico" component={DepartamentoPedagogico} /> 
         <Stack.Screen name="Comercial" component={DepartamentoComercial} /> 
         <Stack.Screen name="Pessoal" component={DepartamentoPessoal} />
         <Stack.Screen name="Social" component={DepartamentoSocial} />
-        <Stack.Screen name="Seleção" component={DepartamentoSelecao} /> 
+        <Stack.Screen name="Selecao" component={DepartamentoSelecao} /> 
         <Stack.Screen name="Notificacoes" component={Notificacoes} />
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="MeusChamados" component={MeusChamados} />

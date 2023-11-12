@@ -4,7 +4,7 @@ import Header2 from './Header2';
 
 
 function DepartamentoSelecao ({ navigation }) {
-
+ 
 
     return (
         <View style={styles.Container}>
@@ -22,7 +22,6 @@ const styles = StyleSheet.create ({
     Title:{
             color: '#2B2D60',
             textAlign: 'center',
-            fontWeight: 'bold',
             textDecorationLine: 'underline',
             fontSize: 25,
             paddingBottom: '13%',
