@@ -14,7 +14,7 @@ function MeusChamados ({ navigation }) {
             <Header2 />
             <View>
                 <Text style={styles.Title}>Meus Chamados</Text>
-            </View>    
+            </View>     
             <View>
                 <ScrollView>
                     <TouchableOpacity style={styles.ContainerChamado} onPress={Chamado}>

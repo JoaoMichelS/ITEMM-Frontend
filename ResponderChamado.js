@@ -8,13 +8,12 @@ function ResponderChamado ({ navigation }) {
         navigation.navigate('EnviarResposta')
     };
 
-
     return (
         <View style={styles.Container}>
             <Header2 />
             <View>
                 <Text style={styles.Title}>Responder Chamado</Text>
-                <Text style={styles.Title2}>Departamento</Text>
+                <Text style={styles.Title2}>Descrição</Text>
                 <TextInput style={styles.input}>
                 </TextInput>
                 <Text style={styles.Title3}>Comentário</Text>
@@ -40,7 +39,6 @@ const styles = StyleSheet.create ({
     Title: {
         color: '#2B2D60',
         textAlign: 'center',
-        fontWeight: 'bold',
         textDecorationLine: 'underline',
         fontSize: 25,
         paddingBottom: '10%',
@@ -52,15 +50,15 @@ const styles = StyleSheet.create ({
 
     Title2: {
         color: "#2B2D60",
-        paddingTop: '8%',
-        paddingLeft: '11%',
+        paddingTop: '5%',
+        paddingLeft: '14%',
         fontSize: 20,
     },
 
     Title3: {
         color: "#2B2D60",
         paddingTop: '14%',
-        paddingLeft: '11%',
+        paddingLeft: '14%',
         fontSize: 20,
 
     },
@@ -75,12 +73,12 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "-10%",
+        bottom: "-7%",
     },
 
     input: {
         width: 300,
-        height: 40,
+        height: 150,
         borderColor: '#2B2D60',
         borderWidth: 1,
         borderRadius: 5,
