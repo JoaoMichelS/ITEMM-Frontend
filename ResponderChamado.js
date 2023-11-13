@@ -14,10 +14,9 @@ function ResponderChamado ({ navigation }) {
             <View>
                 <Text style={styles.Title}>Responder Chamado</Text>
                 <Text style={styles.Title2}>Descrição</Text>
-                <TextInput style={styles.input}>
-                </TextInput>
+                <Text style={styles.ContainerChamado}></Text>
                 <Text style={styles.Title3}>Comentário</Text>
-                <TextInput style={styles.input2} 
+                <TextInput style={styles.input} 
                     value={Text}
                     textAlignVertical='top' 
                     returnKeyType='done' 
@@ -76,7 +75,7 @@ const styles = StyleSheet.create ({
         bottom: "-7%",
     },
 
-    input: {
+    ContainerChamado: {
         width: 300,
         height: 150,
         borderColor: '#2B2D60',
@@ -85,7 +84,7 @@ const styles = StyleSheet.create ({
         alignSelf: 'center',
     },
 
-    input2: {
+    input: {
         width: 300,
         height: 150,
         borderColor: '#2B2D60',

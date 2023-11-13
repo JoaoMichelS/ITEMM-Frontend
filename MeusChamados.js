@@ -5,8 +5,8 @@ import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 function MeusChamados ({ navigation }) { 
 
-    const Chamado = () => {
-        navigation.navigate('Chamado')
+    const ChamadosAbertos = () => {
+        navigation.navigate('ChamadosAbertos')
       };
 
     return (
@@ -17,7 +17,7 @@ function MeusChamados ({ navigation }) {
             </View>     
             <View>
                 <ScrollView>
-                    <TouchableOpacity style={styles.ContainerChamado} onPress={Chamado}>
+                    <TouchableOpacity style={styles.ContainerChamado} onPress={ChamadosAbertos}>
                         <Text style={styles.Departamento}>Departamento Pessoal</Text>
                         <Text style={styles.Assunto}>Duvidas com o cadatro</Text>
                         <Text style={styles.Data}>12/11/2023</Text>

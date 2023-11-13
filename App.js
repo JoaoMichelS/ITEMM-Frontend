@@ -27,6 +27,7 @@ const Stack = createStackNavigator();
 function App(){
   return (
     <NavigationContainer>
+      <Stack.Navigator initialRouteName="MainOperador">
       <Stack.Navigator initialRouteName="ChamadosAbertos">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
