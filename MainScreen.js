@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Header from './HeaderPrincipal';
+import HeaderPrincipal from './HeaderPrincipal';
 
 function MainScreen({ navigation }) {
 
@@ -10,7 +10,7 @@ function MainScreen({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header />
+            <HeaderPrincipal />
             <View style={styles.Content}>
                 <Text></Text>
             </View>
