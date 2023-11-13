@@ -6,7 +6,7 @@ function Perfil ({ navigation }) {
     
     return ( 
         <View style={styles.Container}>
-            <Header2 />
+            <Header2 /> 
             <View>
                 <Text style={styles.Title}>Perfil</Text>
                 <TextInput style={styles.inputNome} />

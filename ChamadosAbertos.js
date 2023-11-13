@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, TextInput } from 'react-native-gesture-handler';
 
 function ChamadosAbertos ({navigation}) {
-
-    const Abertos = () => {
-        navigation.navigate('Abertos')
-    }
-
 
     return (
         <View style={styles.Container}>
             <Header2 />
             <View>
-                <Text style={styles.Title}>Chamados Abertos</Text>
-                <Text style={styles.Title2}>Resposta Operador</Text>
+                <Text style={styles.ContainerChamado}></Text>
+                <Text style={styles.Title}>Resposta Operador</Text>
+                <Text style={styles.ContainerResposta}></Text>
             </View>     
             <View>
             </View>
@@ -28,20 +24,33 @@ const styles = StyleSheet.create ({
         flex: 1,
     },
 
+    ContainerChamado: {
+        width: 300,
+        height: 180,
+        borderColor: '#2B2D60',
+        borderWidth: 1,
+        borderRadius: 5,
+        alignSelf: 'center',
+        marginTop: 60,
+    },
+
     Title: {
         color: "#2B2D60",
         textDecorationLine: 'underline',
         textAlign: 'center',
-        paddingTop: 30,
-        fontSize: 15,
+        paddingTop: '23%',
+        fontSize: 20,
+        alignSelf: 'center',
     },
 
-    Title2: {
-        color: "#2B2D60",
-        textDecorationLine: 'underline',
-        textAlign: 'center',
-        paddingTop: '30%',
-        fontSize: 15,
+    ContainerResposta: {
+        width: 300,
+        height: 200,
+        borderColor: '#2B2D60',
+        borderWidth: 1,
+        borderRadius: 5,
+        alignSelf: 'center',
+        marginTop: 50,
     },
 });
 
