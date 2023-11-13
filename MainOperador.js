@@ -12,14 +12,18 @@ function MainOperador({ navigation }) {
         navigation.navigate ('Relatorio')
     };
 
+    const NovoChamado = () => { 
+        navigation.navigate ('NovoChamado')
+    };
+
     return (
         <View style={styles.Container}>
             <Header />
             <View style={styles.Content}>
                 <Text></Text>
             </View>
-            <TouchableOpacity style={styles.ButtonChamado} onPress={Departamentos}>
-                <Text style={styles.ChamadosAbertos}>Chamados abertos</Text>
+            <TouchableOpacity style={styles.ButtonChamado} onPress={NovoChamado}>
+                <Text style={styles.ChamadosAbertos}>Iniciar chamado</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.ButtonRelatorio} onPress={Relatorios}>
                 <Text style={styles.Relatorios}>Relatórios</Text>
