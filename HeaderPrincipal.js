@@ -73,4 +73,5 @@ const styles = StyleSheet.create ({
     TouchableOpacity : {
         height: 30
     },
+    
 });
