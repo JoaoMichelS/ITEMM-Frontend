@@ -19,11 +19,18 @@ function NewUserScreen({ navigation }) {
         };
         axios.post("http://localhost:3000/user", newUser).
           then(function (response){
-            console.log(response.data)
+            console.log(response);
+            if (response.status == 200){
+              alert('logou!');
+              navigation.navigate('Main');
+            }
+            else{
+              alert('Erro ao criar usuário');
+            }
           }).catch(function (err){
             console.log(err);
+            alert('Erro ao criar usuário');
           });
-        alert('Usuário Criado!');
       } catch (error) {
         console.log(error);
         alert('Sign in failed: ' + error.message);

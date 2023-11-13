@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { signInWithEmailAndPassword } from "firebase/auth";
 import axios from 'axios';
 
 function LoginScreen({ navigation }) {
@@ -9,23 +8,20 @@ function LoginScreen({ navigation }) {
 
     const signIn = async () => {
       try{
-        const user = {
-          password: password,
-        };
-
-        axios({
-          method: "get",
-          url: "http://localhost:3000/user",
-          data: user
-        }).
+        const user = {password: password};
+        axios.get("http://localhost:3000/user", {email: email, password: password}).
         then(function (response){
           console.log(response);
-
+          if (response.status == 200){
+            alert('logou!');
+            navigation.navigate('Main');
+          }
+          alert('Erro ao logar');
         }).catch(function (err){
           console.log(err);
+          alert('Erro ao logar Axios');
         });
-        alert('logou!');
-        navigation.navigate('Main');
+
       } catch (error) {
         console.log(error);
         alert('Sign in failed: ' + error.message);

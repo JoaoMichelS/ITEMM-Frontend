@@ -28,16 +28,17 @@ function MainOperador({ navigation }) {
             <TouchableOpacity style={styles.ButtonRelatorio} onPress={Relatorios}>
                 <Text style={styles.Relatorios}>Relatórios</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.ButtonRelatorio} onPress={Departamentos}>
+                <Text style={styles.Relatorios}>Departamentos</Text>
+            </TouchableOpacity>
         </View>
-    );
-    
+    );  
 };
 
 const styles = StyleSheet.create ({
     Container: {
         flex: 1,
         justifyContent: 'center',
-        
     },
 
     Content: {
@@ -71,6 +72,7 @@ const styles = StyleSheet.create ({
         paddingRight: 'auto',
         paddingLeft: 'auto', 
         marginBottom: -20,
+        marginTop: 30,
         height: 85,
         width: 220,
         alignItems: 'center',
@@ -89,9 +91,6 @@ const styles = StyleSheet.create ({
         color: "#FFF",
         fontSize: 20,
     },
-
-    TextoChamado: {
-    }
 });
 
 export default MainOperador;

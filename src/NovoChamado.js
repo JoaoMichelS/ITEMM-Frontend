@@ -2,8 +2,40 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
 import { ScrollView } from 'react-native-gesture-handler';
+import axios from 'axios';
 
 function NovoChamado ({ navigation }) {
+    const [departament, setDepartament] = useState('');
+    const [subject, setSubject] = useState('');
+    const [description, setDescription] = useState('');
+
+    const createCall = async () => {
+        try{
+            const newCall = {
+                subject: subject,
+                status: false,
+                departament: departament,
+                description: description
+            }
+            axios.post("http://localhost:3000/call", newCall).
+            then(function (response){
+                console.log(response);
+                if (response.status == 200){
+                  alert('Chamado criado!');
+                  navigation.navigate('Main');
+                }
+                else{
+                  alert('Erro ao criar o chamado');
+                }
+              }).catch(function (err){
+                console.log(err);
+                alert('Erro ao criar o chamado');
+              });
+        } catch {
+            console.log(error);
+            alert('Sign in failed: ' + error.message);
+        }
+    }
 
     return (
         <View style={styles.Container}>
@@ -12,25 +44,27 @@ function NovoChamado ({ navigation }) {
                 <ScrollView>
                 <Text style={styles.Title}>Novo Chamado</Text>
                 <Text style={styles.Title2}>Departamento</Text>
-                <TextInput style={styles.input1}>
-                    {/* onChangeText={(text) => setEmail(text)}*/}
-                    {/* value={Text}*/}
-                </TextInput>
+                <TextInput 
+                    style={styles.input1}
+                    onChangeText={(text) => setDepartament(text)}
+                    value={departament}
+                />
                 <Text style={styles.Title3}>Assunto</Text>
-                <TextInput style={styles.input2}>
-                    {/* onChangeText={(text) => setEmail(text)}*/}
-                    {/* value={Text}*/}
-                </TextInput>
+                <TextInput 
+                    style={styles.input2}
+                    onChangeText={(text) => setSubject(text)}
+                    value={subject}
+                />
                 <Text style={styles.Title2}>Descrição</Text>
-                
                 <TextInput style={styles.input3} 
-                    value={Text}
                     textAlignVertical='top' 
                     returnKeyType='done' 
                     multiline={true}
+                    onChangeText={(text) => setDescription(text)}
+                    value={description}
                 />
                 
-                <TouchableOpacity style={styles.ButtonCriar} onPress={NovoChamado}>
+            <TouchableOpacity style={styles.ButtonCriar} onPress={createCall}>
                 <Text style={styles.CriarChamado}>Criar Chamado</Text>
             </TouchableOpacity>
             </ScrollView>

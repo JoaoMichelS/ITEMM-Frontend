@@ -1,24 +1,38 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import axios from 'axios';
 
 function ForgotPasswordScreen({ navigation }) {
     const [email, setEmail] = useState('');
-    const auth = FIREBASE_AUTH;
+    const [oldPassword, setOldPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
  
     const ForgotPassword = () => {
-        sendPasswordResetEmail(auth, email)
-        .then(() => {
-            alert("Email de alteração de senha enviado!")
-        }).catch((error) => {
-            alert("Email não enviado: " + error)
-        })
+      axios.get("http://localhost:3000/user", {email: email, password: oldPassword}).
+      then(function (response){
+        console.log(response.data)
+        const data = response.data;
+        var newUser = data.user;
+        newUser.password = newPassword;
+        if (response.status == 200){
+          axios.post(`http://localhost:3000/user/${data.id}`, newUser).
+          then(function (response_){
+            console.log(response_.data);
+          }).catch(function (err){
+            alert('Erro ao atualizar Axios');
+          });
+          navigation.navigate('Login');
+        }
+        else {alert('Erro ao atualizar');}
+      }).catch(function (err){
+        console.log(err);
+        alert('Erro ao atualizar Axios');
+      });
       }
 
     return (
         <View style={styles.container}>
             <Text style={styles.ForgotPassword}>Recuperar senha</Text>
-            <Text style={styles.text}>Digite seu email para envio do link de recuperação:</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -26,9 +40,23 @@ function ForgotPasswordScreen({ navigation }) {
                 onChangeText={(text) => setEmail(text)}
                 value={email}
             />
+            <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                placeholderTextColor={"#FFFFFF"}
+                onChangeText={(text) => setOldPassword(text)}
+                value={oldPassword}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Nova Senha"
+                placeholderTextColor={"#FFFFFF"}
+                onChangeText={(text) => setNewPassword(text)}
+                value={newPassword}
+            />
             <View style={styles.buttonContainer}>
               <TouchableOpacity style={styles.button} onPress={ForgotPassword}>
-                  <Text style={styles.textB}>ENTRAR</Text>
+                  <Text style={styles.textB}>Atualizar</Text>
               </TouchableOpacity>
             </View>
         </View>
