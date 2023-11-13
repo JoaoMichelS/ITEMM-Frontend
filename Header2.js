@@ -2,11 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header ({ navigation }) { 
+export default function Header () { 
+
+    const navigation = useNavigation();
 
     const MenuScreen = () => {
-        navigation.navigate('MenuScreen')
+        navigation.navigate('Menu')
       };
 
       const Notificacoes = () => {

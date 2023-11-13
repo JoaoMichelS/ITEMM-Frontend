@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Header from './HeaderPrincipal';
+import HeaderPrincipal from './HeaderPrincipal';
 import { VictoryPie, VictoryTooltip } from 'victory-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -21,7 +21,7 @@ function MainOperador({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header />
+            <HeaderPrincipal />
             <View style={styles.Content}>
                 <VictoryPie data={DATA} colorScale={DATA.map((value) => value.color)} origin={{ y: 180 }}
                     labelPlacement={({ index }) => index

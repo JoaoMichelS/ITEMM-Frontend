@@ -11,7 +11,7 @@ function ResponderChamado ({ navigation }) {
     return (
         <View style={styles.Container}>
             <Header2 />
-            <View>
+            <View> 
                 <Text style={styles.Title}>Responder Chamado</Text>
                 <Text style={styles.Title2}>Descrição</Text>
                 <Text style={styles.ContainerChamado}></Text>
