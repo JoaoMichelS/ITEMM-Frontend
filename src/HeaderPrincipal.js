@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
-import {FIREBASE_AUTH, auth} from "./src/services/firebaseConfig";
 
 export default function Header ({ navigation }) {
 

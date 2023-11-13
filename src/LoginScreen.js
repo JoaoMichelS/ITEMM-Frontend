@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import {FIREBASE_AUTH, auth} from "./src/services/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import axios from 'axios';
 
 function LoginScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const auth = FIREBASE_AUTH;
 
     const signIn = async () => {
       try{
-        const response = await signInWithEmailAndPassword(auth, email, password);
-        console.log(response);
+        const user = {
+          password: password,
+        };
+
+        axios({
+          method: "get",
+          url: "http://localhost:3000/user",
+          data: user
+        }).
+        then(function (response){
+          console.log(response);
+
+        }).catch(function (err){
+          console.log(err);
+        });
         alert('logou!');
         navigation.navigate('Main');
       } catch (error) {
@@ -29,39 +41,39 @@ function LoginScreen({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
-            <Image
-            source={require('./assets/Logo.jpg')}
-            style={styles.Image}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Email"
-                placeholderTextColor={"#FFFFFF"}
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Senha"
-                placeholderTextColor={"#FFFFFF"}
-                secureTextEntry 
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-            />
-            <TouchableOpacity style={styles.ForgotPassword} onPress={ForgotPassword}>
-                <Text style={styles.ForgotPassword}>Recuperar senha</Text>
-            </TouchableOpacity>
-            <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.button} onPress={signIn}>
-                  <Text style={styles.text}>ENTRAR</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonNewUser} onPress={NewUser}>
-                  <Text>Cadastre-se</Text>
-              </TouchableOpacity>
-            </View>
+      <View style={styles.container}>
+        <Image
+        source={require('./assets/Logo.jpg')}
+        style={styles.Image}
+        />
+        <TextInput
+            style={styles.input}
+            placeholder="Email"
+            placeholderTextColor={"#FFFFFF"}
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+        />
+        <TextInput
+            style={styles.input}
+            placeholder="Senha"
+            placeholderTextColor={"#FFFFFF"}
+            secureTextEntry 
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+        />
+        <TouchableOpacity style={styles.ForgotPassword} onPress={ForgotPassword}>
+            <Text style={styles.ForgotPassword}>Recuperar senha</Text>
+        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={signIn}>
+              <Text style={styles.text}>ENTRAR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonNewUser} onPress={NewUser}>
+              <Text>Cadastre-se</Text>
+          </TouchableOpacity>
         </View>
-  );
+      </View>
+    );
 }
 
 const styles = StyleSheet.create({

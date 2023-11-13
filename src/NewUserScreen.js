@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { FIREBASE_AUTH } from './src/services/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import axios from 'axios';
 
 function NewUserScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [VerPassword, setVerPassword] = useState('');
-    const auth = FIREBASE_AUTH;
 
     const signUp = async () => {
       try{
-        const response = await createUserWithEmailAndPassword(auth, email, password);
-        console.log(response);
+        const newUser = {
+          name: username,
+          email: email,
+          password: password,
+          operator: false,
+        };
+        axios.post("http://localhost:3000/user", newUser).
+          then(function (response){
+            console.log(response.data)
+          }).catch(function (err){
+            console.log(err);
+          });
         alert('Usuário Criado!');
       } catch (error) {
         console.log(error);

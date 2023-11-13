@@ -1,25 +1,25 @@
 import React from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './LoginScreen';
-import NewUserScreen from './NewUserScreen';
-import MainScreen from './MainScreen';
-import ForgotPasswordScreen from './ForgotPasswordScreen';
-import NovoChamado from './NovoChamado';
-import MainOperador from './MainOperador';
-import DepartamentoOP from './DepartamentoOP';
-import Perfil from './Perfil';
-import Configuracoes from './Configuracoes';
-import ResponderChamado from './ResponderChamado';
-import DepartamentoPedagogico from './DepartamentoPedagogico';
-import Notificacoes from './Notificacoes';
-import MenuScreen from './MenuScreen';
-import MeusChamados from './MeusChamados';
-import DepartamentoComercial from './DepartamentoComercial';
-import DepartamentoPessoal from './DepartamentoPessoal';
-import DepartamentoSocial from './DepartamentoSocial';
-import DepartamentoSelecao from './DepartamentoSelecao';
-import ChamadosAbertos from './ChamadosAbertos';
+import LoginScreen from './src/LoginScreen';
+import NewUserScreen from './src/NewUserScreen';
+import MainScreen from './src/MainScreen';
+import ForgotPasswordScreen from './src/ForgotPasswordScreen';
+import NovoChamado from './src/NovoChamado';
+import MainOperador from './src/MainOperador';
+import DepartamentoOP from './src/DepartamentoOP';
+import Perfil from './src/Perfil';
+import Configuracoes from './src/Configuracoes';
+import ResponderChamado from './src/ResponderChamado';
+import DepartamentoPedagogico from './src/DepartamentoPedagogico';
+import Notificacoes from './src/Notificacoes';
+import MenuScreen from './src/MenuScreen';
+import MeusChamados from './src/MeusChamados';
+import DepartamentoComercial from './src/DepartamentoComercial';
+import DepartamentoPessoal from './src/DepartamentoPessoal';
+import DepartamentoSocial from './src/DepartamentoSocial';
+import DepartamentoSelecao from './src/DepartamentoSelecao';
+import ChamadosAbertos from './src/ChamadosAbertos';
 
 
 const Stack = createStackNavigator(); 
@@ -27,7 +27,7 @@ const Stack = createStackNavigator();
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MeusChamados">
+      <Stack.Navigator initialRouteName="NewUser">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
