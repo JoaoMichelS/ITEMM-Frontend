@@ -19,6 +19,7 @@ import DepartamentoComercial from './DepartamentoComercial';
 import DepartamentoPessoal from './DepartamentoPessoal';
 import DepartamentoSocial from './DepartamentoSocial';
 import DepartamentoSelecao from './DepartamentoSelecao';
+import ChamadosAbertos from './ChamadosAbertos';
 
 
 const Stack = createStackNavigator(); 
@@ -45,6 +46,7 @@ function App(){
         <Stack.Screen name="Notificacoes" component={Notificacoes} />
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="MeusChamados" component={MeusChamados} />
+        <Stack.Screen name="ChamadosAbertos" component={ChamadosAbertos} />
       </Stack.Navigator>
     </NavigationContainer>
   )
