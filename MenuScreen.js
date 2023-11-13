@@ -34,7 +34,7 @@ function MenuScreen ({ navigation }) {
             <View style={styles.ContainerChamados}>
                 <TouchableOpacity style={styles.IconeChamados} onPress={MeusChamados}>
                     <Entypo name="folder" size={30}/>
-                    <Text style={styles.Chamados}>Meus Chamados</Text>
+                    <Text style={styles.Chamados}>Chamados</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.ContainerConfiguracoes}>
