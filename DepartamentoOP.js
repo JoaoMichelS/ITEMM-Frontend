@@ -4,24 +4,24 @@ import Header2 from './Header2';
 
 function Departamentos({ navigation }) {
 
-    const DepPedagogico = () => { 
-        navigation.navigate (' Pedagogico ')
+    const DepartamentoPedagogico = () => { 
+        navigation.navigate ('Pedagogico')
     };
 
-    const DepSelecao = () => {
-        navigation.navigate (' Selecao ')
+    const DepartamentoSelecao = () => {
+        navigation.navigate ('Selecao')
+    }; 
+
+    const DepartamentoSocial = () => {
+        navigation.navigate ('Social')
     };
 
-    const DepSocial = () => {
-        navigation.navigate (' Social ')
+    const DepartamentoPessoal = () => {
+        navigation.navigate ('Pessoal')
     };
 
-    const DepPessoal = () => {
-        navigation.navigate (' Pessoal ')
-    };
-
-    const DepComercial = () => {
-        navigation.navigate (' Comercial ')
+    const DepartamentoComercial = () => {
+        navigation.navigate ('Comercial')
     };
 
     return (
@@ -30,19 +30,19 @@ function Departamentos({ navigation }) {
         <View style={styles.Content}>
             <Text style={styles.Text}>Departamentos</Text>
         </View>
-        <TouchableOpacity style={styles.ButtonPedago} onPress={DepPedagogico}>
+        <TouchableOpacity style={styles.ButtonPedago} onPress={DepartamentoPedagogico}>
             <Text style={styles.DepPedagogico}>Pedagógico</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonSelecao} onPress={DepSelecao}>
+        <TouchableOpacity style={styles.ButtonSelecao} onPress={DepartamentoSelecao}>
             <Text style={styles.DepSelecao}>Seleção</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonSocial} onPress={DepSocial}>
+        <TouchableOpacity style={styles.ButtonSocial} onPress={DepartamentoSocial}>
             <Text style={styles.DepSocial}>Social</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonPessoal} onPress={DepPessoal}>
+        <TouchableOpacity style={styles.ButtonPessoal} onPress={DepartamentoPessoal}>
             <Text style={styles.DepPessoal}>Pessoal</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonComercial} onPress={DepComercial}>
+        <TouchableOpacity style={styles.ButtonComercial} onPress={DepartamentoComercial}>
             <Text style={styles.DepComercial}>Comercial</Text>
         </TouchableOpacity>
     </View>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "5%",
+        bottom: "12%",
     },
 
     ButtonSelecao: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "5%",
+        bottom: "11%",
     },
 
     ButtonSocial: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "5%",
+        bottom: "10%",
     },
 
     ButtonPessoal: {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "5%",
+        bottom: "10%",
     },
 
     ButtonComercial: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "5%",
+        bottom: "10%",
     },
 
     DepPedagogico: {
@@ -173,10 +173,9 @@ const styles = StyleSheet.create ({
     Text: {
         color: '#2B2D60',
         textAlign: 'center',
-        fontWeight: 'bold',
         textDecorationLine: 'underline',
         fontSize: 40,
-        paddingBottom: '13%',
+        paddingBottom: '25%',
     }
     
 });
