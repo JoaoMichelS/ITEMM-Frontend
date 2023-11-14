@@ -10,6 +10,11 @@ function NewUserScreen({ navigation }) {
     const [VerPassword, setVerPassword] = useState('');
 
     const signUp = async () => {
+      if (password != VerPassword) {
+        alert("Senhas diferentes");
+        return ;
+      }
+
       try{
         const newUser = {
           name: username,
@@ -21,11 +26,10 @@ function NewUserScreen({ navigation }) {
           then(function (response){
             console.log(response);
             if (response.status == 200){
-              alert('logou!');
-              navigation.navigate('Main');
+              navigation.navigate('Main', response.data);
             }
-            else{
-              alert('Erro ao criar usuário');
+            else if (response.status == 409){
+              alert('Usuário já existe');
             }
           }).catch(function (err){
             console.log(err);
@@ -70,7 +74,7 @@ function NewUserScreen({ navigation }) {
                 placeholder="Confirmar Senha"
                 placeholderTextColor={"#FFFFFF"}
                 secureTextEntry
-                onChangeText={(text) => setPassword(text)}
+                onChangeText={(text) => setVerPassword(text)}
                 value={VerPassword}
             />
               <TouchableOpacity style={styles.button} onPress={signUp}>

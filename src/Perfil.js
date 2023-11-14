@@ -1,17 +1,44 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
+import axios from 'axios';
  
 function Perfil ({ navigation }) {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     
+    const updateUser = async () => {
+        
+    }
+
     return ( 
         <View style={styles.Container}>
             <Header2 /> 
             <View>
                 <Text style={styles.Title}>Perfil</Text>
-                <TextInput style={styles.inputNome} />
-                <TextInput style={styles.inputEmail} />
-                <TextInput style={styles.inputSenha} />
+                <TextInput
+                    style={styles.inputNome}
+                    placeholder="Usuário"
+                    placeholderTextColor={"#FFFFFF"}
+                    onChangeText={(text) => setUsername(text)}
+                    value={username}
+                />
+                <TextInput
+                    style={styles.inputEmail}
+                    placeholder="E-mail"
+                    placeholderTextColor={"#FFFFFF"}
+                    onChangeText={(text) => setEmail(text)}
+                    value={email}
+                />
+                <TextInput
+                    style={styles.inputSenha}
+                    placeholder="Senha"
+                    placeholderTextColor={"#FFFFFF"}
+                    secureTextEntry
+                    onChangeText={(text) => setPassword(text)}
+                    value={password}
+                />
         
             </View>
             <View style={styles.ButtonContainer}>

@@ -4,7 +4,7 @@ import Header2 from './Header2';
 import { ScrollView } from 'react-native-gesture-handler';
 import axios from 'axios';
 
-function NovoChamado ({ navigation }) {
+function NovoChamado ({ route, navigation }) {
     const [departament, setDepartament] = useState('');
     const [subject, setSubject] = useState('');
     const [description, setDescription] = useState('');
@@ -22,7 +22,7 @@ function NovoChamado ({ navigation }) {
                 console.log(response);
                 if (response.status == 200){
                   alert('Chamado criado!');
-                  navigation.navigate('Main');
+                  navigation.navigate('Main', route.params);
                 }
                 else{
                   alert('Erro ao criar o chamado');
@@ -63,14 +63,11 @@ function NovoChamado ({ navigation }) {
                     onChangeText={(text) => setDescription(text)}
                     value={description}
                 />
-                
             <TouchableOpacity style={styles.ButtonCriar} onPress={createCall}>
                 <Text style={styles.CriarChamado}>Criar Chamado</Text>
             </TouchableOpacity>
             </ScrollView>
             </View>
-            
-            
         </View>
     );
 };
@@ -89,12 +86,10 @@ const styles = StyleSheet.create ({
     },
 
     Title2: {
-
         color: "#2B2D60",
         paddingTop: 45,
         paddingLeft: 25,
         fontSize: 20,
-
     },
 
     Title3: {

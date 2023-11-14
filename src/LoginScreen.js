@@ -8,20 +8,15 @@ function LoginScreen({ navigation }) {
 
     const signIn = async () => {
       try{
-        const user = {password: password};
-        axios.get("http://localhost:3000/user", {email: email, password: password}).
+        axios.post("http://localhost:3000/user/login", {email: email, password: password}).
         then(function (response){
-          console.log(response);
-          if (response.status == 200){
-            alert('logou!');
-            navigation.navigate('Main');
-          }
-          alert('Erro ao logar');
+          console.log(response.data);
+          if (response.status == 200){navigation.navigate('Main', response.data);}
+          else {alert('Erro ao logar');}
         }).catch(function (err){
           console.log(err);
           alert('Erro ao logar Axios');
         });
-
       } catch (error) {
         console.log(error);
         alert('Sign in failed: ' + error.message);

@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Header from './HeaderPrincipal';
 
-function MainScreen({ navigation }) {
+function MainScreen({ route, navigation }) {
+    console.log(route.params);
 
     const NovoChamado = () => { 
-        navigation.navigate ('NovoChamado')
+        navigation.navigate('NovoChamado', route.params);
     }; 
 
     return (
         <View style={styles.Container}>
-            <Header />
+            <Header name={route.params.name} />
             <View style={styles.Content}>
                 <Text></Text>
             </View>
@@ -19,7 +20,6 @@ function MainScreen({ navigation }) {
             </TouchableOpacity>
         </View>
     );
-    
 };
 
 

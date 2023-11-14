@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 
-export default function Header ({ navigation }) {
-
+export default function Header ( props, { navigation }) {
+    console.log(props)
     const MenuScreen = () => {
         navigation.navigate('MenuScreen')
       };
@@ -18,7 +18,7 @@ export default function Header ({ navigation }) {
             <TouchableOpacity  onPress={MenuScreen}> 
                 <Entypo style={styles.menu} name="menu" size={30}/>
             </TouchableOpacity> 
-            <Text style={styles.nome}>Olá, </Text>
+            <Text style={styles.nome}>Olá, {props.name}</Text>
             <Text style={styles.data}>7 set. 2023</Text> 
             <TouchableOpacity onPress={Notificacoes}>
                 <Fontisto style={styles.bell} name="bell-alt" size={20}/>
