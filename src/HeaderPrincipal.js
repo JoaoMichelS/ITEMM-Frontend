@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header ( props, { navigation }) {
-    console.log(props)
+export default function HeaderPrincipal ( props, { navigation }) {
+    const navigation = useNavigation();
+
     const MenuScreen = () => {
-        navigation.navigate('MenuScreen')
+        navigation.navigate('Menu')
       };
 
     const Notificacoes = () => {
@@ -15,12 +17,14 @@ export default function Header ( props, { navigation }) {
 
     return (
         <View style={styles.header}>
-            <TouchableOpacity  onPress={MenuScreen}> 
+            <TouchableOpacity style={styles.TouchableOpacity} onPress={MenuScreen}> 
                 <Entypo style={styles.menu} name="menu" size={30}/>
-            </TouchableOpacity> 
-            <Text style={styles.nome}>Olá, {props.name}</Text>
-            <Text style={styles.data}>7 set. 2023</Text> 
-            <TouchableOpacity onPress={Notificacoes}>
+            </TouchableOpacity>
+            <View>
+                <Text style={styles.nome}>Olá, {props.name}</Text>
+                <Text style={styles.data}>7 set. 2023</Text> 
+            </View>
+            <TouchableOpacity style={styles.TouchableOpacity} onPress={Notificacoes}>
                 <Fontisto style={styles.bell} name="bell-alt" size={20}/>
             </TouchableOpacity>
         </View>
@@ -28,48 +32,44 @@ export default function Header ( props, { navigation }) {
 };
 
 const styles = StyleSheet.create ({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 
     header : {
         height : 125,
-        paddingTop: 10,
+        paddingTop: 15,
         paddingRight: 25,
         paddingBottom: 8,
         paddingLeft: 25,
         backgroundColor: '#96C75A',
         borderBottomColor: '#fff',
-        justifyContent: 'center',
+        justifyContent : 'space-between',
+        display: 'flex',
+        flexDirection: 'row'
     },
     
     nome : {
         color: "#FFF",
         fontSize: 24,
-        top: 10,
-        left: 30,
-        
+        marginTop: 40,
+        paddingRight: '65%',
     },
 
     data : {
         color: "#FFF",
         fontSize: 18,
-        top: 10,
-        left: 30,
+        marginBottom: 10,
         },
     
     menu : {
         color : "#FFFFFF",
-        left: -5,
-        top: 3,
+        position: "absolute"
     },
 
     bell : {
         color: '#FFFFFF',
-        textAlign : "right",
-        bottom : 76,
-        padding: -50,
     },
+    
+    TouchableOpacity : {
+        height: 30
+    },
+    
 });

@@ -20,14 +20,15 @@ import DepartamentoPessoal from './src/DepartamentoPessoal';
 import DepartamentoSocial from './src/DepartamentoSocial';
 import DepartamentoSelecao from './src/DepartamentoSelecao';
 import ChamadosAbertos from './src/ChamadosAbertos';
-
+import Header from './src/Header2';
+import HeaderPrincipal from './src/HeaderPrincipal';
 
 const Stack = createStackNavigator(); 
 
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ChamadosAbertos">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="NewUser" component={NewUserScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -47,6 +48,8 @@ function App(){
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="MeusChamados" component={MeusChamados} />
         <Stack.Screen name="ChamadosAbertos" component={ChamadosAbertos} />
+        <Stack.Screen name="Header2" component={Header} />
+        <Stack.Screen name="HeaderPrincipal" component={HeaderPrincipal} />
       </Stack.Navigator>
     </NavigationContainer>
   )

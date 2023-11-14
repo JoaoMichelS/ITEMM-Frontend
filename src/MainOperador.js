@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Header from './HeaderPrincipal';
+import HeaderPrincipal from './HeaderPrincipal';
+import { VictoryPie, VictoryTooltip } from 'victory-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function MainOperador({ navigation }) {
 
-    const Departamentos = () => { 
-        navigation.navigate ('Departamentos') 
-    };
+    const DATA = [
+        {x: 'Nao Atendidos', y: 90, color: 'tomato',},
+        {x: 'Atendidos', y: 70, color: '#90EE90',},
+    ];
 
     const Relatorios = () => { 
         navigation.navigate ('Relatorio')
@@ -18,9 +21,15 @@ function MainOperador({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header />
+            <HeaderPrincipal />
             <View style={styles.Content}>
-                <Text></Text>
+                <VictoryPie data={DATA} colorScale={DATA.map((value) => value.color)} origin={{ y: 180 }}
+                    labelPlacement={({ index }) => index
+                        ? "parallel"
+                        : "vertical" }
+                    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+                    labelRadius={40}
+                    />
             </View>
             <TouchableOpacity style={styles.ButtonChamado} onPress={NovoChamado}>
                 <Text style={styles.ChamadosAbertos}>Iniciar chamado</Text>
@@ -44,7 +53,6 @@ const styles = StyleSheet.create ({
     Content: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
     },
 
     ButtonChamado: {
@@ -61,7 +69,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "15%",
+        bottom: "6%",
     },
 
     ButtonRelatorio: {
@@ -78,7 +86,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        bottom: "10%",
+        bottom: "8%",
     },
 
 

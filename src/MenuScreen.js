@@ -14,7 +14,7 @@ function MenuScreen ({ navigation }) {
         navigation.navigate('Perfil')
       };
 
-      const MeusChamados = () => {
+      const MeusChamados = () => { 
         navigation.navigate('MeusChamados')
       };
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Header from './HeaderPrincipal';
+import HeaderPrincipal from './HeaderPrincipal';
 
 function MainScreen({ route, navigation }) {
     console.log(route.params);
@@ -11,7 +11,7 @@ function MainScreen({ route, navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header name={route.params.name} />
+            <HeaderPrincipal name={route.params.name}/>
             <View style={styles.Content}>
                 <Text></Text>
             </View>
