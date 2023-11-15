@@ -3,15 +3,13 @@ import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } fr
 import HeaderPrincipal from './HeaderPrincipal';
 
 function MainScreen({ route, navigation }) {
-    console.log(route.params);
-
     const NovoChamado = () => { 
         navigation.navigate('NovoChamado', route.params);
     }; 
 
     return (
         <View style={styles.Container}>
-            <HeaderPrincipal name={route.params.name}/>
+            <HeaderPrincipal user={route.params}/>
             <View style={styles.Content}>
                 <Text></Text>
             </View>

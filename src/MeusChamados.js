@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header2 from './Header2';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import axios from 'axios';
 
-function MeusChamados ({ navigation }) { 
+function MeusChamados ({ route, navigation }) {
+    const [userCalls, setUserCalls] = useState([]);
+    
+    useEffect( () => {
+        async function getCalls() {
+            await axios.get(`http://localhost:3000/calls/${route.params.id}`)
+            .then(function (response) {
+                if (response.status == 200){
+                    setUserCalls(response.data);
+                }
+            })
+            .catch(function (err){
+                console.log("Error")
+            })
+        }
+        getCalls()
+    }, []);
 
     const ChamadosAbertos = () => {
-        navigation.navigate('ChamadosAbertos')
-      };
+        navigation.navigate('ChamadosAbertos', route.params)
+    };
 
     return (
         <View style={styles.Container}>
@@ -16,12 +33,14 @@ function MeusChamados ({ navigation }) {
                 <Text style={styles.Title}>Meus Chamados</Text>
             </View>     
             <View>
-                <ScrollView>
-                    <TouchableOpacity style={styles.ContainerChamado} onPress={ChamadosAbertos}>
-                        <Text style={styles.Departamento}>Departamento Pessoal</Text>
-                        <Text style={styles.Assunto}>Duvidas com o cadatro</Text>
-                        <Text style={styles.Data}>12/11/2023</Text>
-                    </TouchableOpacity>
+                <ScrollView>            
+                    {userCalls?.map((call, i) => {
+                        <TouchableOpacity key={i} style={styles.ContainerChamado} onPress={ChamadosAbertos}>
+                            <Text style={styles.Departamento}>{call.departament}</Text>
+                            <Text style={styles.Assunto}>{call.description}</Text>
+                            <Text style={styles.Data}>12/11/2023</Text>
+                        </TouchableOpacity>    
+                    })}
                 </ScrollView>
             </View>
         </View>

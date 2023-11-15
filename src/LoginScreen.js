@@ -10,9 +10,13 @@ function LoginScreen({ navigation }) {
       try{
         axios.post("http://localhost:3000/user/login", {email: email, password: password}).
         then(function (response){
-          console.log(response.data);
-          if (response.status == 200){navigation.navigate('Main', response.data);}
-          else {alert('Erro ao logar');}
+          if (response.status == 200){
+            if (response.data.operator == false){
+              navigation.navigate('Main', response.data);
+            } else {
+              navigation.navigate('MainOperador', response.data);
+            };
+          } else {alert('Erro ao logar')};
         }).catch(function (err){
           console.log(err);
           alert('Erro ao logar Axios');
@@ -26,7 +30,6 @@ function LoginScreen({ navigation }) {
     const ForgotPassword = () => {
       navigation.navigate('ForgotPassword')
     };
-
     const NewUser = () => {
       navigation.navigate('NewUser')
     }

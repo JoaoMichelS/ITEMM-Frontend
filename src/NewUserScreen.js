@@ -4,84 +4,83 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import axios from 'axios';
 
 function NewUserScreen({ navigation }) {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [VerPassword, setVerPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [VerPassword, setVerPassword] = useState('');
 
-    const signUp = async () => {
-      if (password != VerPassword) {
-        alert("Senhas diferentes");
-        return ;
-      }
-
-      try{
-        const newUser = {
-          name: username,
-          email: email,
-          password: password,
-          operator: false,
-        };
-        axios.post("http://localhost:3000/user", newUser).
-          then(function (response){
-            console.log(response);
-            if (response.status == 200){
-              navigation.navigate('Main', response.data);
-            }
-            else if (response.status == 409){
-              alert('Usuário já existe');
-            }
-          }).catch(function (err){
-            console.log(err);
-            alert('Erro ao criar usuário');
-          });
-      } catch (error) {
-        console.log(error);
-        alert('Sign in failed: ' + error.message);
-      }
+  const signUp = async () => {
+    if (password != VerPassword) {
+      alert("Senhas diferentes");
+      return ;
     }
 
-    return (
-        <View style={styles.container}>
-            <Image
-            source={require('./assets/Logo.jpg')}
-            style={styles.Image}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Usuário"
-                placeholderTextColor={"#FFFFFF"}
-                onChangeText={(text) => setUsername(text)}
-                value={username}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="E-mail"
-                placeholderTextColor={"#FFFFFF"}
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Senha"
-                placeholderTextColor={"#FFFFFF"}
-                secureTextEntry
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Confirmar Senha"
-                placeholderTextColor={"#FFFFFF"}
-                secureTextEntry
-                onChangeText={(text) => setVerPassword(text)}
-                value={VerPassword}
-            />
-              <TouchableOpacity style={styles.button} onPress={signUp}>
-                  <Text style={styles.text}>Cadastre-se</Text>
-              </TouchableOpacity>
-            </View>
-    );
+    try{
+      const newUser = {
+        name: username,
+        email: email,
+        password: password,
+        operator: false,
+      };
+      axios.post("http://localhost:3000/user", newUser).
+      then(function (response){
+        if (response.status == 200){
+          alert("Usuário cadastrado")
+          navigation.navigate('Login');
+        }
+        else if (response.status == 409){
+          alert('Usuário já existe');
+        }
+      }).catch(function (err){
+        alert('Erro ao criar usuário ou já existente');
+      });
+    } catch (error) {
+      console.log(error);
+      alert('Erro ao criar usuário: ' + error.message);
+    }
+  }
+
+  return (
+      <View style={styles.container}>
+          <Image
+          source={require('./assets/Logo.jpg')}
+          style={styles.Image}
+          />
+          <TextInput
+              style={styles.input}
+              placeholder="Usuário"
+              placeholderTextColor={"#FFFFFF"}
+              onChangeText={(text) => setUsername(text)}
+              value={username}
+          />
+          <TextInput
+              style={styles.input}
+              placeholder="E-mail"
+              placeholderTextColor={"#FFFFFF"}
+              onChangeText={(text) => setEmail(text)}
+              value={email}
+          />
+          <TextInput
+              style={styles.input}
+              placeholder="Senha"
+              placeholderTextColor={"#FFFFFF"}
+              secureTextEntry
+              onChangeText={(text) => setPassword(text)}
+              value={password}
+          />
+          <TextInput
+              style={styles.input}
+              placeholder="Confirmar Senha"
+              placeholderTextColor={"#FFFFFF"}
+              secureTextEntry
+              onChangeText={(text) => setVerPassword(text)}
+              value={VerPassword}
+          />
+            <TouchableOpacity style={styles.button} onPress={signUp}>
+                <Text style={styles.text}>Cadastre-se</Text>
+            </TouchableOpacity>
+          </View>
+  );
 }
 
 const styles = StyleSheet.create({

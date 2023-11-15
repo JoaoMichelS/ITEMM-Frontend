@@ -4,11 +4,11 @@ import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-export default function HeaderPrincipal ( props, { navigation }) {
+export default function HeaderPrincipal (props) { //, { navigation }
     const navigation = useNavigation();
 
     const MenuScreen = () => {
-        navigation.navigate('Menu')
+        navigation.navigate('Menu', props.user)
       };
 
     const Notificacoes = () => {
@@ -21,7 +21,7 @@ export default function HeaderPrincipal ( props, { navigation }) {
                 <Entypo style={styles.menu} name="menu" size={30}/>
             </TouchableOpacity>
             <View>
-                <Text style={styles.nome}>Olá, {props.name}</Text>
+                <Text style={styles.nome}>Olá, {props.user.name}</Text>
                 <Text style={styles.data}>7 set. 2023</Text> 
             </View>
             <TouchableOpacity style={styles.TouchableOpacity} onPress={Notificacoes}>

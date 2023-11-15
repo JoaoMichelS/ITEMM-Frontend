@@ -8,22 +8,22 @@ function ForgotPasswordScreen({ navigation }) {
     const [newPassword, setNewPassword] = useState('');
  
     const ForgotPassword = () => {
-      axios.get("http://localhost:3000/user", {email: email, password: oldPassword}).
+      axios.post(`http://localhost:3000/user/login`, {email: email, password: oldPassword}).
       then(function (response){
-        console.log(response.data)
-        const data = response.data;
-        var newUser = data.user;
-        newUser.password = newPassword;
         if (response.status == 200){
-          axios.post(`http://localhost:3000/user/${data.id}`, newUser).
+          const id = response.data.id;
+          var newUser = response.data;
+          delete newUser.id;
+          newUser.password = newPassword;
+          axios.post(`http://localhost:3000/user/${id}`, newUser).
           then(function (response_){
-            console.log(response_.data);
+            if (response_.status == 200){navigation.navigate('Login');}
+            else {alert('Erro ao atualizar usuário');};
           }).catch(function (err){
-            alert('Erro ao atualizar Axios');
+            alert('Erro ao atualizar usuário');
           });
-          navigation.navigate('Login');
         }
-        else {alert('Erro ao atualizar');}
+        else {alert('Erro ao atualizar usuário');}
       }).catch(function (err){
         console.log(err);
         alert('Erro ao atualizar Axios');
@@ -44,6 +44,7 @@ function ForgotPasswordScreen({ navigation }) {
                 style={styles.input}
                 placeholder="Senha"
                 placeholderTextColor={"#FFFFFF"}
+                secureTextEntry
                 onChangeText={(text) => setOldPassword(text)}
                 value={oldPassword}
             />
@@ -51,6 +52,7 @@ function ForgotPasswordScreen({ navigation }) {
                 style={styles.input}
                 placeholder="Nova Senha"
                 placeholderTextColor={"#FFFFFF"}
+                secureTextEntry
                 onChangeText={(text) => setNewPassword(text)}
                 value={newPassword}
             />

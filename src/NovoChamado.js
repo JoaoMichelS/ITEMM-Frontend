@@ -13,9 +13,10 @@ function NovoChamado ({ route, navigation }) {
         try{
             const newCall = {
                 subject: subject,
-                status: false,
+                status: true,
                 departament: departament,
-                description: description
+                description: description,
+                userID: route.params.id
             }
             axios.post("http://localhost:3000/call", newCall).
             then(function (response){

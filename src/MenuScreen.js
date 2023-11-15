@@ -8,14 +8,13 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
-function MenuScreen ({ navigation }) {
-
+function MenuScreen ({ route, navigation }) {
     const Perfil = () => {
         navigation.navigate('Perfil')
       };
 
       const MeusChamados = () => { 
-        navigation.navigate('MeusChamados')
+        navigation.navigate('MeusChamados', route.params)
       };
 
       const Configuracoes = () => {

@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import HeaderPrincipal from './HeaderPrincipal';
-import { VictoryPie, VictoryTooltip } from 'victory-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { VictoryPie, VictoryTooltip } from 'victory';
+import axios from 'axios';
+//import { ScrollView } from 'react-native-gesture-handler';
 
-function MainOperador({ navigation }) {
-
-    const DATA = [
+function MainOperador({ route, navigation }) {
+    const [DATA, setUserCalls] = useState([
         {x: 'Nao Atendidos', y: 90, color: 'tomato',},
         {x: 'Atendidos', y: 70, color: '#90EE90',},
-    ];
+    ]);
 
     const Relatorios = () => { 
-        navigation.navigate ('Relatorio')
+        navigation.navigate('Relatorio');
     };
-
     const NovoChamado = () => { 
-        navigation.navigate ('NovoChamado')
+        navigation.navigate('NovoChamado', route.params);
     };
+    const Departamentos = () => {
+        navigation.navigate("Departamentos");
+    }
 
     return (
         <View style={styles.Container}>
-            <HeaderPrincipal />
+            <HeaderPrincipal user={route.params}/>
             <View style={styles.Content}>
-                <VictoryPie data={DATA} colorScale={DATA.map((value) => value.color)} origin={{ y: 180 }}
-                    labelPlacement={({ index }) => index
-                        ? "parallel"
-                        : "vertical" }
-                    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-                    labelRadius={40}
-                    />
+            <VictoryPie data={DATA} 
+                colorScale={DATA.map((value) => value.color)}
+                origin={{ y: 180 }}
+                labelPlacement={
+                    ({ index }) => index
+                    ? "parallel"
+                    : "vertical"
+                }
+                labels={
+                    ({ datum }) => `${datum.x}: ${datum.y}`
+                }
+                labelRadius={40}
+            />
             </View>
             <TouchableOpacity style={styles.ButtonChamado} onPress={NovoChamado}>
                 <Text style={styles.ChamadosAbertos}>Iniciar chamado</Text>
@@ -43,6 +51,8 @@ function MainOperador({ navigation }) {
         </View>
     );  
 };
+
+/**/
 
 const styles = StyleSheet.create ({
     Container: {
